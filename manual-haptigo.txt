@@ -1,0 +1,21 @@
+====================================================================
+HAPTIGO - MANUAL DE INDUCCION Y USO SEGURO (VERSION ACCESIBLE TXT)
+Universidad Peruana de Ciencias Aplicadas (UPC) - 1ASI0784
+====================================================================
+
+1. QUE ES HAPTIGO (AVISO DE SEGURIDAD HU-040)
+HaptiGo (dispositivo Haptic One) es una herramienta complementaria de
+asistencia microespacial para obstaculos frontales a la altura del torso
+o la cabeza (< 2 m, cono de 35 grados). NUNCA sustituye el uso del
+baston blanco ni las tecnicas de Orientacion y Movilidad.
+
+2. ZONAS Y PATRONES VIBROTACTILES
+- Zona Lejana (1,0 m a 2,0 m): Patron suave y espaciado.
+- Zona Cercana (0,5 m a 1,0 m): Patron ritmico medio.
+- Zona Muy Cercana (< 0,5 m): Patron intenso y continuo de alerta critica.
+- Bateria baja (< 15 %): Tres pulsos largos cada 10 minutos.
+
+3. PREVENCION DE ERRORES (HU-014)
+- Para detener la asistencia activa, mantenga presionado el boton rojo
+  "Mantener 1,5 s para finalizar asistencia" durante 1,5 segundos.
+====================================================================

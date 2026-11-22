@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="HaptiGo: Asistencia háptica de proximidad para personas con discapacidad visual. Complementa tu bastón blanco, sin sustituirlo." />
+  <title>HaptiGo — Asistencia Háptica de Proximidad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a href="#slides-viewport" class="skip-link">Saltar al contenido principal</a>
+
+  <!-- ======================================================================
+       BARRA SUPERIOR FIJA (Idéntica a Figma Desktop & Mobile)
+       ====================================================================== -->
+  <header class="topbar" id="topbar">
+    <div class="container topbar-inner">
+      <button type="button" class="brand-btn" data-go-slide="0" aria-label="HaptiGo — Ir a Inicio">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-text">HaptiGo</span>
+      </button>
+
+      <!-- Navegación Desktop -->
+      <nav class="desktop-nav" aria-label="Navegación principal por secciones">
+        <button type="button" class="nav-item is-active" data-go-slide="0">Inicio</button>
+        <button type="button" class="nav-item" data-go-slide="1">Funcionamiento</button>
+        <button type="button" class="nav-item" data-go-slide="2">Simulador</button>
+        <button type="button" class="nav-item" data-go-slide="3">Video</button>
+        <button type="button" class="nav-item" data-go-slide="4">Ficha técnica</button>
+        <button type="button" class="nav-item" data-go-slide="5">Recursos</button>
+        <button type="button" class="nav-cta" data-go-slide="6">Contacto</button>
+      </nav>
+
+      <!-- Botón Menú Mobile (Figma Mobile Header) -->
+      <button
+        type="button"
+        class="mobile-menu-btn"
+        id="mobile-menu-open"
+        aria-expanded="false"
+        aria-controls="mobile-menu-overlay"
+      >
+        Menú
+      </button>
+    </div>
+  </header>
+
+  <!-- ======================================================================
+       MENÚ MÓVIL PANTALLA COMPLETA (Idéntico a lámina "Menú de navegación" Figma)
+       ====================================================================== -->
+  <div id="mobile-menu-overlay" class="mobile-menu-overlay" role="dialog" aria-modal="true" aria-label="Menú de navegación" hidden>
+    <div class="mobile-menu-inner">
+      <p class="mobile-menu-overline">HaptiGo / PROTOTIPO</p>
+      <h2 class="mobile-menu-title">Menú de navegación</h2>
+      <p class="mobile-menu-sub">Versión Mobile · seleccionar sección.</p>
+
+      <div class="mobile-menu-pills">
+        <button type="button" class="mobile-pill" data-go-slide="0">Inicio</button>
+        <button type="button" class="mobile-pill" data-go-slide="1">Funcionamiento</button>
+        <button type="button" class="mobile-pill" data-go-slide="2">Simulador</button>
+        <button type="button" class="mobile-pill" data-go-slide="3">Video</button>
+        <button type="button" class="mobile-pill" data-go-slide="4">Ficha técnica</button>
+        <button type="button" class="mobile-pill" data-go-slide="5">Recursos</button>
+        <button type="button" class="mobile-pill" data-go-slide="6">Contacto</button>
+        <button type="button" class="mobile-pill mobile-pill--back" id="mobile-menu-close">Volver</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       CONTENEDOR DE SLIDES SEPARADOS (Vista única sin scroll largo)
+       ====================================================================== -->
+  <main id="slides-viewport" class="slides-viewport" aria-live="polite">
+
+    <!-- ====================================================================
+         SLIDE 0: INICIO / HERO (Dark 900 + Ilustración Haptic One Figma)
+         ==================================================================== -->
+    <section class="slide slide--dark is-active" data-slide="0" aria-label="Inicio — HaptiGo">
+      <div class="container slide-body hero-layout">
+        <div class="hero-left">
+          <p class="hero-overline">
+            <span class="dot-teal" aria-hidden="true"></span>
+            TECNOLOGÍA ASISTIVA / HAPTIGO
+          </p>
+          <h1 class="hero-title">Muévete con más<br />confianza.</h1>
+          <p class="hero-desc">
+            Asistencia háptica de proximidad para personas con discapacidad visual.
+            Complementa tu bastón blanco, sin sustituirlo.
+          </p>
+
+          <div class="hero-buttons">
+            <button type="button" class="btn-teal" data-go-slide="2">
+              Explorar simulador
+            </button>
+            <button type="button" class="btn-dark-outline" data-go-slide="3">
+              Ver demostración
+            </button>
+          </div>
+
+          <p class="hero-footnote">
+            Prototipo académico · UPC (1ASI0784) · Herramienta complementaria al bastón blanco.
+          </p>
+        </div>
+
+        <!-- Ilustración exacta del dispositivo Haptic One de tu Figma -->
+        <div class="hero-right" aria-hidden="true">
+          <div class="haptic-radar">
+            <span class="ring r-1"></span>
+            <span class="ring r-2"></span>
+            <span class="ring r-3"></span>
+            <span class="ring r-4"></span>
+            <div class="strap-band"></div>
+            <div class="haptic-unit">
+              <div class="haptic-sensor-pill"></div>
+              <div class="haptic-led-dot"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SLIDE 1: 01 / PROPUESTA DE VALOR (3 Pilares + Recordatorio HU-040)
+         ==================================================================== -->
+    <section class="slide slide--light" data-slide="1" aria-label="01 Propuesta de valor" hidden>
+      <div class="container slide-body">
+        <header class="sec-head">
+          <p class="sec-overline">01 / PROPUESTA DE VALOR</p>
+          <h2 class="sec-title">Tecnología pensada para ti</h2>
+          <p class="sec-sub">Tres pilares del diseño de HaptiGo.</p>
+        </header>
+
+        <div class="pillars-grid">
+          <article class="pillar-card">
+            <span class="pillar-num">01</span>
+            <h3 class="pillar-title">Asistencia háptica</h3>
+            <p class="pillar-desc">
+              Patrones de vibración que representan zonas de proximidad frente a obstáculos a la altura del torso o la cabeza (&lt; 2 m, cono de 35°).
+            </p>
+          </article>
+
+          <article class="pillar-card">
+            <span class="pillar-num">02</span>
+            <h3 class="pillar-title">Canal auditivo libre</h3>
+            <p class="pillar-desc">
+              La información táctil es el canal principal; audio por conducción ósea opcional para no bloquear sonidos del entorno urbano.
+            </p>
+          </article>
+
+          <article class="pillar-card">
+            <span class="pillar-num">03</span>
+            <h3 class="pillar-title">Complemento del bastón</h3>
+            <p class="pillar-desc">
+              Apoyo frontal complementario, no reemplaza las ayudas de movilidad ni exige mirar la pantalla mientras caminas.
+            </p>
+          </article>
+        </div>
+
+        <div class="hu-banner" role="note">
+          <span class="dot-teal" aria-hidden="true"></span>
+          <p>
+            <strong>Recordatorio de seguridad (HU-040):</strong> HaptiGo es una herramienta complementaria de proximidad frontal; usa siempre tu bastón blanco para explorar desniveles y superficies del suelo.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SLIDE 2: 02 / DEMOSTRACIÓN INTERACTIVA (Simulador Idéntico a Figma)
+         ==================================================================== -->
+    <section class="slide slide--white" data-slide="2" aria-label="02 Demostración — Simulador interactivo" hidden>
+      <div class="container slide-body">
+        <header class="sec-head sec-head--compact">
+          <p class="sec-overline">02 / DEMOSTRACIÓN</p>
+          <h2 class="sec-title">Explora las zonas de proximidad</h2>
+          <p class="sec-sub">Ajusta una distancia ficticia y observa cómo cambiaría la alerta.</p>
+        </header>
+
+        <div class="sim-two-col">
+          <!-- Panel izquierdo: Controles -->
+          <div class="sim-controls-card">
+            <div class="sim-field">
+              <div class="sim-dist-header">
+                <label for="distance-slider" class="field-lbl">Distancia simulada del obstáculo</label>
+                <div class="preset-pills" role="group" aria-label="Distancias rápidas de prueba">
+                  <button type="button" class="preset-chip" data-preset="2.5">2,5 m</button>
+                  <button type="button" class="preset-chip" data-preset="1.5">1,5 m</button>
+                  <button type="button" class="preset-chip is-selected" data-preset="0.8">0,8 m</button>
+                  <button type="button" class="preset-chip" data-preset="0.3">0,3 m</button>
+                </div>
+              </div>
+
+              <div class="sim-big-readout" id="distance-output">0,8 m</div>
+
+              <input
+                type="range"
+                id="distance-slider"
+                min="0.2"
+                max="2.5"
+                step="0.1"
+                value="0.8"
+                aria-describedby="slider-hint"
+              />
+              <div class="slider-scale" aria-hidden="true">
+                <span>0,2 m</span>
+                <span>2,5 m</span>
+              </div>
+              <p id="slider-hint" class="field-hint">
+                Desliza entre 0,2 m (riesgo inminente) y 2,5 m (entorno despejado).
+              </p>
+            </div>
+
+            <div class="sim-field">
+              <span id="intensity-group-lbl" class="field-lbl">Intensidad vibrotáctil (HU-018)</span>
+              <div class="seg-group" role="radiogroup" aria-labelledby="intensity-group-lbl">
+                <button type="button" class="seg-btn" role="radio" aria-checked="false" data-intensity="Suave">Suave</button>
+                <button type="button" class="seg-btn is-active" role="radio" aria-checked="true" data-intensity="Media">Media</button>
+                <button type="button" class="seg-btn" role="radio" aria-checked="false" data-intensity="Alta">Alta</button>
+              </div>
+            </div>
+
+            <div class="sim-field">
+              <label for="audio-select" class="field-lbl">Audio por conducción ósea (HU-020)</label>
+              <select id="audio-select" class="figma-select">
+                <option value="none">Desactivado (solo vibración táctil)</option>
+                <option value="critical" selected>Solo alertas críticas (&lt; 0,5 m)</option>
+                <option value="all">Todas las zonas de proximidad</option>
+              </select>
+            </div>
+
+            <div class="sim-action-row">
+              <button type="button" id="btn-test-pulse" class="btn-teal">Probar pulso háptico</button>
+              <button type="button" id="btn-toggle-sim" class="btn-light-outline" aria-pressed="false">Pausar simulación</button>
+            </div>
+          </div>
+
+          <!-- Panel derecho: Estado Asistencia Activa (Dark 900) -->
+          <div class="sim-dark-card">
+            <div class="sim-dark-top">
+              <span class="active-pill">
+                <span id="status-led" class="dot-teal" aria-hidden="true"></span>
+                <span id="status-badge">ASISTENCIA ACTIVA · 0–2 M</span>
+              </span>
+              <span class="battery-label">Batería: 82 % (~7 h)</span>
+            </div>
+
+            <!-- Anillos concéntricos + círculo central idéntico a Figma -->
+            <div class="concentric-box" aria-hidden="true">
+              <div id="concentric-rings" class="concentric-rings state-cercano">
+                <span class="c-ring c-ring-outer"></span>
+                <span class="c-ring c-ring-mid"></span>
+                <div class="c-core">
+                  <span id="core-distance">0,8 m</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="sim-readout-block" role="status" aria-live="polite" aria-atomic="true">
+              <h3 id="sim-title" class="sim-state-heading">Obstáculo cercano</h3>
+              <p id="sim-subtitle" class="sim-state-sub">
+                Obstáculo cercano · patrón medio · 0,8 m · Intensidad Media.
+              </p>
+
+              <div class="pattern-row">
+                <span id="bars-indicator" class="bars-indicator" aria-hidden="true">
+                  <i class="b1 is-lit"></i>
+                  <i class="b2 is-lit"></i>
+                  <i class="b3"></i>
+                </span>
+                <span id="pattern-text" class="pattern-text">Patrón rítmico medio (0,5 – 1,0 m)</span>
+              </div>
+            </div>
+
+            <!-- Botón rojo pulsación sostenida 1,5s (HU-014) -->
+            <div class="hold-wrapper">
+              <button type="button" id="btn-hold-stop" class="btn-hold-danger" aria-describedby="hold-note">
+                <span id="hold-fill" class="hold-fill" aria-hidden="true"></span>
+                <span id="hold-text" class="hold-text">Mantener 1,5 s para finalizar asistencia</span>
+                <span class="hold-bottom-line" aria-hidden="true"></span>
+              </button>
+              <p id="hold-note" class="hold-note">
+                Seguridad anti-toques accidentales (HU-014): mantén presionado 1,5 s para detener.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 Tarjetas inferiores de zonas de proximidad (idénticas a Figma) -->
+        <div class="zones-row">
+          <div class="zone-box zone-box--teal">
+            <div class="zone-top">
+              <strong class="zone-title-teal">1–2 m · Lejano</strong>
+              <span class="mini-signal" aria-hidden="true"><i class="lit"></i><i></i><i></i></span>
+            </div>
+            <p>Patrón suave y espaciado para advertencia temprana.</p>
+          </div>
+
+          <div class="zone-box zone-box--teal">
+            <div class="zone-top">
+              <strong class="zone-title-teal">0,5–1 m · Cercano</strong>
+              <span class="mini-signal" aria-hidden="true"><i class="lit"></i><i class="lit"></i><i></i></span>
+            </div>
+            <p>Patrón medio de frecuencia creciente para maniobra preventiva.</p>
+          </div>
+
+          <div class="zone-box zone-box--red">
+            <div class="zone-top">
+              <strong class="zone-title-red">&lt; 0,5 m · Muy cercano</strong>
+              <span class="mini-signal is-red" aria-hidden="true"><i class="lit"></i><i class="lit"></i><i class="lit"></i></span>
+            </div>
+            <p>Patrón intenso y continuo: detente y revisa el entorno con el bastón.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SLIDE 3: 03 / CONOCE HAPTIGO (Storyboard Interactivo 5 Escenas HU-042)
+         ==================================================================== -->
+    <section class="slide slide--light" data-slide="3" aria-label="03 Conoce HaptiGo — Demostración accesible" hidden>
+      <div class="container slide-body">
+        <header class="sec-head">
+          <p class="sec-overline">03 / CONOCE HAPTIGO</p>
+          <h2 class="sec-title">Demostración accesible</h2>
+          <p class="sec-sub">Demostración conceptual narrada en español, con subtítulos y descripción sonora (HU-042).</p>
+        </header>
+
+        <div class="storyboard-player">
+          <div class="sb-top-bar">
+            <span class="active-pill">
+              <span class="dot-teal" aria-hidden="true"></span>
+              <span id="sb-step-badge">STORYBOARD CONCEPTUAL · ESCENA 1 DE 5</span>
+            </span>
+            <div class="sb-dots" role="tablist" aria-label="Escenas de demostración">
+              <button type="button" class="sb-dot is-active" data-scene="0" aria-label="Escena 1">1</button>
+              <button type="button" class="sb-dot" data-scene="1" aria-label="Escena 2">2</button>
+              <button type="button" class="sb-dot" data-scene="2" aria-label="Escena 3">3</button>
+              <button type="button" class="sb-dot" data-scene="3" aria-label="Escena 4">4</button>
+              <button type="button" class="sb-dot" data-scene="4" aria-label="Escena 5">5</button>
+            </div>
+          </div>
+
+          <div class="sb-stage" aria-live="polite">
+            <div class="sb-visual-pill" id="sb-visual-tag">HAPTIGO · VISIÓN GENERAL</div>
+            <h3 class="sb-scene-title" id="sb-scene-title">Asistencia háptica de proximidad</h3>
+            <p class="sb-scene-caption" id="sb-scene-caption">
+              [Subtítulos CC]: "HaptiGo propone comunicar la proximidad frontal mediante patrones hápticos sin bloquear tu audición ambiental."
+            </p>
+            <p class="sb-scene-ad" id="sb-scene-ad" hidden>
+              [Descripción sonora AD]: Peatón desplazándose con bastón blanco en vía urbana; el dispositivo pectoral Haptic One proyecta un cono frontal de 35 grados hasta 2 metros.
+            </p>
+          </div>
+
+          <div class="sb-controls">
+            <button type="button" id="btn-sb-play" class="btn-teal" aria-pressed="false">Reproducir</button>
+            <button type="button" id="btn-sb-next" class="btn-dark-outline">Siguiente escena →</button>
+            <button type="button" id="btn-sb-cc" class="btn-dark-outline is-on" aria-pressed="true">Subtítulos (CC)</button>
+            <button type="button" id="btn-sb-ad" class="btn-dark-outline" aria-pressed="false">Descripción sonora</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SLIDE 4: 04 / FICHA TÉCNICA (Especificaciones Haptic One HU-044)
+         ==================================================================== -->
+    <section class="slide slide--white" data-slide="4" aria-label="04 Ficha técnica" hidden>
+      <div class="container slide-body">
+        <header class="sec-head">
+          <p class="sec-overline">04 / FICHA TÉCNICA</p>
+          <h2 class="sec-title">El dispositivo, en detalle</h2>
+          <p class="sec-sub">Especificaciones objetivo del concepto Haptic One (HU-044).</p>
+        </header>
+
+        <div class="specs-cards-grid">
+          <div class="spec-item-card">
+            <span class="spec-kicker">SENSOR</span>
+            <h3 class="spec-val">ToF / ultrasónico · &lt; 2 m</h3>
+            <p>Cobertura frontal en cono de 35° a la altura del torso y cabeza, filtrando falsas alarmas laterales.</p>
+          </div>
+
+          <div class="spec-item-card">
+            <span class="spec-kicker">PESO Y ERGONOMÍA</span>
+            <h3 class="spec-val">&lt; 120 g</h3>
+            <p>Unidad portátil ligera de sujeción pectoral discreta para mantener ambas manos libres.</p>
+          </div>
+
+          <div class="spec-item-card">
+            <span class="spec-kicker">BATERÍA</span>
+            <h3 class="spec-val">Li-Po · 8 horas</h3>
+            <p>Autonomía continua para desplazamientos diarios con alerta táctil preventiva al llegar al 15 %.</p>
+          </div>
+
+          <div class="spec-item-card">
+            <span class="spec-kicker">CONECTIVIDAD</span>
+            <h3 class="spec-val">Bluetooth BLE</h3>
+            <p>Emparejamiento rápido con app iOS/Android (VoiceOver y TalkBack) y latencia inferior a 100 ms.</p>
+          </div>
+
+          <div class="spec-item-card">
+            <span class="spec-kicker">PROTECCIÓN AMBIENTAL</span>
+            <h3 class="spec-val">IP54 estimado</h3>
+            <p>Resistencia proyectada frente a polvo urbano y llovizna ligera (especificación objetivo no certificada).</p>
+          </div>
+
+          <div class="spec-item-card spec-item-card--accent">
+            <span class="spec-kicker">ALCANCE DEL PROTOTIPO</span>
+            <h3 class="spec-val">Validación UX / HCI</h3>
+            <p>Diseño centrado en el usuario desarrollado en UPC (1ASI0784) junto a usuarios, familiares y especialistas O&amp;M.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SLIDE 5: 05 / RECURSOS (FAQ Acordeón + Manuales HU-045 / HU-046)
+         ==================================================================== -->
+    <section class="slide slide--light" data-slide="5" aria-label="05 Recursos — Preguntas frecuentes y manuales" hidden>
+      <div class="container slide-body">
+        <header class="sec-head">
+          <p class="sec-overline">05 / RECURSOS</p>
+          <h2 class="sec-title">Ayuda a tu alcance</h2>
+          <p class="sec-sub">Consulta las preguntas frecuentes y los formatos previstos para el manual de uso seguro.</p>
+        </header>
+
+        <div class="resources-two-col">
+          <!-- Acordeón FAQ -->
+          <div>
+            <h3 class="col-heading">Preguntas frecuentes</h3>
+            <div class="faq-list">
+              <div class="faq-box">
+                <button type="button" class="faq-btn" aria-expanded="true" aria-controls="ans-1">
+                  <span>¿Reemplaza al bastón blanco?</span>
+                  <span class="faq-plus" aria-hidden="true">−</span>
+                </button>
+                <div id="ans-1" class="faq-ans">
+                  <p>No. Se plantea como complemento microespacial para obstáculos elevados (&lt; 2 m); no sustituye el bastón blanco ni las técnicas de Orientación y Movilidad.</p>
+                </div>
+              </div>
+
+              <div class="faq-box">
+                <button type="button" class="faq-btn" aria-expanded="false" aria-controls="ans-2">
+                  <span>¿Cuánto dura la batería?</span>
+                  <span class="faq-plus" aria-hidden="true">+</span>
+                </button>
+                <div id="ans-2" class="faq-ans" hidden>
+                  <p>La autonomía objetivo es de 8 horas continuas con batería recargable Li-Po, emitiendo 3 pulsos largos cuando la carga baja del 15 %.</p>
+                </div>
+              </div>
+
+              <div class="faq-box">
+                <button type="button" class="faq-btn" aria-expanded="false" aria-controls="ans-3">
+                  <span>¿Es compatible con iOS y Android?</span>
+                  <span class="faq-plus" aria-hidden="true">+</span>
+                </button>
+                <div id="ans-3" class="faq-ans" hidden>
+                  <p>Sí. Contempla conectividad Bluetooth BLE y cumplimiento WCAG 2.2 AA/AAA optimizado para VoiceOver (iOS), TalkBack (Android) y NVDA.</p>
+                </div>
+              </div>
+
+              <div class="faq-box">
+                <button type="button" class="faq-btn" aria-expanded="false" aria-controls="ans-4">
+                  <span>¿Cómo solicito soporte o una demostración?</span>
+                  <span class="faq-plus" aria-hidden="true">+</span>
+                </button>
+                <div id="ans-4" class="faq-ans" hidden>
+                  <p>Completa el formulario en la sección Contacto o comunícate por llamada telefónica, correo institucional o WhatsApp accesible.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Manuales de inducción -->
+          <div class="manual-panel">
+            <h3 class="col-heading">Manual de inducción y uso seguro</h3>
+            <p class="manual-intro">
+              Tres formatos accesibles preparados para lectura asistida, línea Braille y revisión fuera de línea (HU-046):
+            </p>
+
+            <div class="format-buttons">
+              <a href="manual-haptigo.txt" download="Manual-HaptiGo-Accesible.txt" class="format-pill">
+                <span>Manual texto plano (Línea Braille)</span>
+                <strong>TXT · 3 KB</strong>
+              </a>
+              <button type="button" class="format-pill" id="btn-preview-manual">
+                <span>Vista previa del contenido del manual</span>
+                <strong>PDF / EPUB</strong>
+              </button>
+            </div>
+
+            <div id="manual-preview-box" class="manual-preview-box">
+              <p><strong>1. Qué es HaptiGo:</strong> Complemento pectoral para detección frontal (&lt; 2 m, cono 35°).</p>
+              <p><strong>2. Exploración digital segura:</strong> Prueba los patrones Lejano, Cercano y Muy cercano en el simulador antes de caminar.</p>
+              <p><strong>3. Seguridad:</strong> Mantén pulsado 1,5 s para finalizar asistencia y usa siempre tu bastón blanco.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SLIDE 6: 06 / CONTACTO (Formulario Validado + Soporte HU-043 / HU-048)
+         ==================================================================== -->
+    <section class="slide slide--white" data-slide="6" aria-label="06 Contacto" hidden>
+      <div class="container slide-body">
+        <header class="sec-head sec-head--compact">
+          <p class="sec-overline">06 / CONTACTO</p>
+          <h2 class="sec-title">¿Quieres conocer más?</h2>
+          <p class="sec-sub">Solicita información sobre el proyecto o una demostración guiada.</p>
+        </header>
+
+        <div class="contact-two-col">
+          <form id="contact-form" class="contact-card" novalidate>
+            <div id="form-alert" class="form-alert" role="alert" aria-live="assertive" hidden></div>
+
+            <div class="form-row">
+              <label for="inp-name">Nombre completo *</label>
+              <input type="text" id="inp-name" placeholder="Escribe tu nombre" required />
+            </div>
+
+            <div class="form-row">
+              <label for="inp-email">Correo electrónico *</label>
+              <input type="email" id="inp-email" placeholder="nombre@ejemplo.com" required />
+            </div>
+
+            <div class="form-row">
+              <label for="inp-phone">Teléfono (opcional)</label>
+              <input type="tel" id="inp-phone" placeholder="Escribe tu número" />
+            </div>
+
+            <div class="form-row">
+              <label for="inp-msg">Mensaje / Consulta *</label>
+              <textarea id="inp-msg" rows="3" placeholder="Cuéntanos qué necesitas" required></textarea>
+            </div>
+
+            <button type="submit" class="btn-teal btn-block">Enviar solicitud</button>
+          </form>
+
+          <div class="support-card">
+            <p class="support-overline">CANALES DE SOPORTE DIRECTO · HU-048</p>
+            <h3>Atención accesible</h3>
+            <p class="support-text">
+              Horario de atención: Lunes a viernes de 9:00 a 18:00 h. Compromiso de respuesta en menos de 48 horas hábiles.
+            </p>
+
+            <div class="support-links">
+              <a href="tel:+5113133333" class="support-btn">Llamar a soporte técnico</a>
+              <a href="mailto:soporte.haptigo@upc.edu.pe?subject=Consulta%20HaptiGo" class="support-btn">Enviar correo a soporte</a>
+              <a href="https://wa.me/51999999999?text=Hola%20HaptiGo,%20quisiera%20informaci%C3%B3n%20sobre%20el%20proyecto" target="_blank" rel="noopener noreferrer" class="support-btn">Chat / WhatsApp accesible</a>
+            </div>
+
+            <p class="support-footer-note">
+              HaptiGo · Proyecto académico · Universidad Peruana de Ciencias Aplicadas (UPC) · Curso 1ASI0784 (Sección 15398).
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================================================================
+       BARRA INFERIOR DE NAVEGACIÓN ENTRE SLIDES (Sin scroll largo)
+       ====================================================================== -->
+  <footer class="slide-dock" aria-label="Control de diapositivas">
+    <div class="container dock-inner">
+      <button type="button" id="btn-prev-slide" class="dock-btn" disabled>
+        ← Anterior
+      </button>
+
+      <div class="dock-indicators" role="tablist" aria-label="Seleccionar sección">
+        <button type="button" class="dock-dot is-active" data-go-slide="0" aria-label="1. Inicio"></button>
+        <button type="button" class="dock-dot" data-go-slide="1" aria-label="2. Propuesta de valor"></button>
+        <button type="button" class="dock-dot" data-go-slide="2" aria-label="3. Simulador"></button>
+        <button type="button" class="dock-dot" data-go-slide="3" aria-label="4. Demostración"></button>
+        <button type="button" class="dock-dot" data-go-slide="4" aria-label="5. Ficha técnica"></button>
+        <button type="button" class="dock-dot" data-go-slide="5" aria-label="6. Recursos"></button>
+        <button type="button" class="dock-dot" data-go-slide="6" aria-label="7. Contacto"></button>
+        <span id="dock-counter" class="dock-counter">1 / 7 · Inicio</span>
+      </div>
+
+      <button type="button" id="btn-next-slide" class="dock-btn dock-btn--primary">
+        Siguiente: Funcionamiento →
+      </button>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
